@@ -13,7 +13,8 @@ import { HiOutlineSupport } from "react-icons/hi";
 import { GoSignOut } from "react-icons/go";
 
 const iconStyle = "mr-2 text-gray-500 text-[30px]";
-const badgeStyle = "ml-2 bg-gray-300 text-black text-xs px-3 py-1 rounded-full";
+const badgeStyle =
+  "absolute ml-2 bg-gray-300 text-black text-xs px-3 py-1 rounded-full top-2 right-5 transform translate-x-1/2 -translate-y-1/2";
 
 const navLinks = [
   {
@@ -61,7 +62,7 @@ const NavBar = () => {
         <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
 
         <input
-          className="pl-10 py-2 border rounded-md focus:ring focus:ring-blue-300 w-full"
+          className="pl-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent w-full"
           placeholder=" Search"
         />
       </div>
@@ -70,10 +71,7 @@ const NavBar = () => {
         <ul className="list-none md:flex flex-row gap-10">
           {navLinks.map((link, index) => {
             return (
-              <li
-                key={index}
-                className="flex items-center mt-3 border-solid border-4 relative"
-              >
+              <li key={index} className="relative flex items-center mt-3">
                 {link.icon}
                 <p className="text-gray-700">{link.title}</p>
                 {link.badge && <span className={badgeStyle}>{link.badge}</span>}
