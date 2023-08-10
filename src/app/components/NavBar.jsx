@@ -14,7 +14,7 @@ import { GoSignOut } from "react-icons/go";
 
 const iconStyle = "mr-2 text-gray-500 text-[30px]";
 const badgeStyle =
-  "absolute ml-2 bg-gray-300 text-black text-xs px-3 py-1 rounded-full top-2 right-5 transform translate-x-1/2 -translate-y-1/2";
+  "absolute ml-2 bg-gray-300 text-black text-xs px-3 py-1 rounded-full top-3 right-5 transform translate-x-1/2 -translate-y-1/2";
 
 const navLinks = [
   {
@@ -68,10 +68,13 @@ const NavBar = () => {
       </div>
       {/* NavLinks Section  */}
       <div className="mt-4">
-        <ul className="list-none md:flex flex-row gap-10">
+        <ul className="list-none md:flex flex-col gap-10">
           {navLinks.map((link, index) => {
             return (
-              <li key={index} className="relative flex items-center mt-3">
+              <li
+                key={index}
+                className="relative flex items-center my-2 hover:bg-gray-100 hover:font-bold"
+              >
                 {link.icon}
                 <p className="text-gray-700">{link.title}</p>
                 {link.badge && <span className={badgeStyle}>{link.badge}</span>}
@@ -81,15 +84,15 @@ const NavBar = () => {
         </ul>
       </div>
       {/* Support and features section */}
-      <div>
-        <ul>
-          <li className="flex items-center">
+      <div className="mt-5">
+        <ul className="list-none md:flex flex-col gap-10">
+          <li className="flex items-center my-3 hover:bg-gray-100 hover:font-bold">
             <HiOutlineSupport className={iconStyle} />
-            <p>Support</p>
+            <p className="text-gray-700">Support</p>
           </li>
-          <li className="flex items-center">
+          <li className="flex items-center my-3 hover:bg-gray-100 hover:font-bold">
             <FiSettings className={iconStyle} />
-            <p>Settings</p>
+            <p className="text-gray-700">Settings</p>
           </li>
         </ul>
       </div>
