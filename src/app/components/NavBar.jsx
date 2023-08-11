@@ -13,6 +13,8 @@ import { HiOutlineSupport } from "react-icons/hi";
 import { GoSignOut } from "react-icons/go";
 
 const iconStyle = "mr-2 text-gray-500 text-[30px]";
+const navLiStyle =
+  "relative flex items-center hover:bg-gray-100 hover:font-bold py-2 rounded-lg";
 const badgeStyle =
   "absolute ml-2 bg-gray-300 text-black text-xs px-3 py-1 rounded-full top-3.5 right-5 transform translate-x-1/2 -translate-y-1/2";
 
@@ -71,10 +73,7 @@ const NavBar = () => {
         <ul className="list-none md:flex flex-col gap-1">
           {navLinks.map((link, index) => {
             return (
-              <li
-                key={index}
-                className="relative flex items-center py-2 hover:bg-gray-100 hover:font-bold rounded-lg"
-              >
+              <li key={index} className={navLiStyle}>
                 {link.icon}
                 <p className="text-gray-700">{link.title}</p>
                 {link.badge && <span className={badgeStyle}>{link.badge}</span>}
@@ -86,15 +85,16 @@ const NavBar = () => {
       {/* Support and features section */}
       <div className="mt-5">
         <ul className="list-none md:flex flex-col gap-1">
-          <li className="flex items-center hover:bg-gray-100 hover:font-bold py-2 rounded-lg">
+          <li className={navLiStyle}>
             <HiOutlineSupport className={iconStyle} />
             <p className="text-gray-700">Support</p>
           </li>
-          <li className="flex items-center hover:bg-gray-100 hover:font-bold py-2 rounded-lg">
+          <li className={navLiStyle}>
             <FiSettings className={iconStyle} />
             <p className="text-gray-700">Settings</p>
           </li>
         </ul>
+
         {/* Features */}
         <div className="mt-5 py-6 bg-gray-100 rounded-lg flex-col items-center justify-center px-4">
           <div className="my-1">
@@ -117,11 +117,16 @@ const NavBar = () => {
             </div>
             <div className="flex-start mt-4 space-x-5">
               <button className="text-gray-700">Dismiss</button>
-              <button className="text-purple-500 font-bold">What's new?</button>
+              <button className="text-purple-500 font-bold">
+                {"What's new?"}
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Divider */}
         <div className="w-full border-t my-8" />
+
         {/* Account */}
         <div className="mb-4 mx-auto flex items-center w-full space-x-5">
           <div className="flex-auto">
