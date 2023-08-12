@@ -13,6 +13,7 @@ import mastercard from "../images/mastercard.png";
 import visa from "../images/visa.png";
 import DashboardNav from "./DashboardNav";
 import EmailForm from "./EmailForm";
+import PaymentForm from "./PaymentForm";
 
 const images = [
   "/images/man-1.jpg",
@@ -23,15 +24,8 @@ const images = [
 ];
 
 const Main = () => {
-  const [active, setActive] = useState("");
+ 
   const [activePayment, setActivePayment] = useState("");
-  const [isAlternativeEmailSelected, setIsAlternativeEmailSelected] =
-    useState(false);
-  const inputRef = useRef(null);
-
-  const handleRadioChange = (event) => {
-    setIsAlternativeEmailSelected(event.target.checked);
-  };
 
   return (
     <div className="px-8 py-5 bg-gray-50 flex-auto overflow-y-auto">
@@ -79,104 +73,7 @@ const Main = () => {
         </div>
 
         <div className="flex-auto">
-          <form className="flex flex-col gap-y-4">
-            <div
-              onClick={() => setActivePayment("visa-card")}
-              className={`${
-                activePayment === "visa-card"
-                  ? "bg-purple-50 border-2 border-purple-300 text-purple-600"
-                  : "bg-white text-gray-500"
-              } relative flex items-start py-5 px-2 w-full border-solid border-2 shadow-md rounded-lg `}
-            >
-              <input
-                className="px-3 radio-button absolute top-6 right-4"
-                type="radio"
-                id="visaPayment"
-                checked={activePayment === "visa-card" ? true : false}
-                name="paymentGroup"
-              />
-              <label
-                className="flex items-start mx-4 gap-4"
-                htmlFor="visaPayment"
-              >
-                <Image
-                  src={visa}
-                  alt="visa-card-payment"
-                  width={50}
-                  height={50}
-                />
-                {/* <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" /> */}
-                <div className="">
-                  <p>
-                    <span className="font-bold">Visa ending in 2345</span>
-                    <span className="block font-medium text-gray-400">
-                      Expiry 06/24
-                    </span>
-                  </p>
-                  <div className="mt-2 flex gap-x-5">
-                    <button className="font-medium text-gray-400">
-                      Set as default
-                    </button>
-                    <button className="text-purple-500 font-semibold">
-                      Edit
-                    </button>
-                  </div>
-                </div>
-              </label>
-            </div>
-
-            <div
-              onClick={() => setActivePayment("mastercard")}
-              className={`${
-                activePayment === "mastercard"
-                  ? "bg-purple-50 border-2 border-purple-300 text-purple-600"
-                  : "bg-white text-gray-500"
-              } relative flex items-start py-5 px-2 w-full border-solid border-2 shadow-md rounded-lg `}
-            >
-              <input
-                className="px-3 radio-button absolute top-6 right-4"
-                type="radio"
-                id="mastercard"
-                checked={activePayment === "mastercard" ? true : false}
-                name="paymentGroup"
-              />
-              <label
-                className="flex items-start mx-4 gap-4"
-                htmlFor="mastercard"
-              >
-                <Image
-                  src={mastercard}
-                  alt="mastercard-payment"
-                  width={50}
-                  height={50}
-                />
-                {/* <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" /> */}
-                <div className="">
-                  <p>
-                    <span className="font-bold">Mastercard ending in 2345</span>
-                    <span className="block font-medium text-gray-400">
-                      Expiry 06/24
-                    </span>
-                  </p>
-                  <div className="mt-2 flex gap-x-5">
-                    <button className="font-medium text-gray-400">
-                      Set as default
-                    </button>
-                    <button className="text-purple-500 font-semibold">
-                      Edit
-                    </button>
-                  </div>
-                </div>
-              </label>
-            </div>
-
-            <div>
-              <button className="flex items-center gap-x-2 text-gray-400 font-semibold">
-                <FiPlus className="text-2xl" />
-                <span> Add new payment method</span>
-              </button>
-            </div>
-          </form>
+          <PaymentForm />
         </div>
       </div>
 
