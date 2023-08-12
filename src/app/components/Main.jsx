@@ -12,6 +12,7 @@ import {
 import mastercard from "../images/mastercard.png";
 import visa from "../images/visa.png";
 import DashboardNav from "./DashboardNav";
+import EmailForm from "./EmailForm";
 
 const images = [
   "/images/man-1.jpg",
@@ -32,48 +33,8 @@ const Main = () => {
     setIsAlternativeEmailSelected(event.target.checked);
   };
 
-  const dashboardLinks = [
-    {
-      id: "my-details",
-      title: "My details",
-    },
-    {
-      id: "profile",
-      title: "Profile",
-    },
-    {
-      id: "password",
-      title: "Password",
-    },
-    {
-      id: "team",
-      title: "Team",
-    },
-    {
-      id: "plan",
-      title: "Plan",
-    },
-    {
-      id: "billing",
-      title: "Billing",
-    },
-    {
-      id: "notifications",
-      title: "Notifications",
-    },
-    {
-      id: "integration",
-      title: "Integration",
-    },
-    {
-      id: "api",
-      title: "Api",
-    },
-  ];
-
   return (
     <div className="px-8 py-5 bg-gray-50 flex-auto overflow-y-auto">
-
       {/* Header section  */}
       <header>
         <h2 className="font-medium text-3xl">Settings</h2>
@@ -85,6 +46,7 @@ const Main = () => {
       {/* Nav section */}
       <DashboardNav />
 
+      {/* Payment section  */}
       <div className="mt-5">
         <div className="py-4">
           <h2 className="font-semibold text-[20px]">Payment method</h2>
@@ -102,66 +64,13 @@ const Main = () => {
             <p className="text-gray-500">Where should invoices be sent?</p>
           </div>
 
-          <div>
-            <form>
-              <div
-                className="flex items-start py-1"
-                onClick={() => setIsAlternativeEmailSelected(false)}
-              >
-                <input
-                  className="px-1 radio-button"
-                  type="radio"
-                  id="originalEmail"
-                  name="emailGroup"
-                />
-                <label className="block mx-6 mt-[-6px]" htmlFor="originalEmail">
-                  <span className="font-semibold text-gray-700">
-                    Send to my account email
-                  </span>
-                  <p className="">olivia@untiltledui.com</p>
-                </label>
-              </div>
-
-              <div
-                className="flex items-start py-1 mt-3"
-                onClick={() => inputRef.current.focus()}
-              >
-                <input
-                  className="px-1 radio-button"
-                  type="radio"
-                  id="alternativeEmail"
-                  name="emailGroup"
-                  onChange={handleRadioChange}
-                />
-                <label
-                  className="block mx-6 mt-[-6px]"
-                  htmlFor="alternativeEmail"
-                >
-                  <span className="font-semibold text-gray-700">
-                    Send to an alternative email
-                  </span>
-
-                  <div
-                    className={`${
-                      !isAlternativeEmailSelected ? "invisible" : "relative"
-                    } py-2`}
-                  >
-                    <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                    <input
-                      ref={inputRef}
-                      className="pl-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent w-full shadow-md"
-                      placeholder="alternative@mail.com"
-                    />
-                  </div>
-                </label>
-              </div>
-            </form>
-          </div>
+          {/* Email Form  */}
+          <EmailForm />
         </div>
       </div>
 
       {/* Divider */}
-      <div className="w-full border-t my-6" />
+      <div className="w-full border-t my-5" />
 
       <div className="flex gap-28 py-4">
         <div>
@@ -346,24 +255,30 @@ const Main = () => {
       <div className="">
         {/* <Image src={images[0]} alt="images" width={100} height={100} /> */}
         <div className="flex items-center">
-      {images.slice(0, 3).map((image, index) => (
-        <div
-          key={index}
-          className={`relative w-8 h-8 rounded-full overflow-hidden border-2 border-white ${
-            index === 0 ? '' : '-ml-3'
-          }`}
-          // style={{ zIndex: images.length - index }}
-        >
-          <Image src={image} width={100} height={100} alt={`Image ${index}`} className="w-full h-full object-cover" />
-        </div>
-      ))}
+          {images.slice(0, 3).map((image, index) => (
+            <div
+              key={index}
+              className={`relative w-8 h-8 rounded-full overflow-hidden border-2 border-white ${
+                index === 0 ? "" : "-ml-3"
+              }`}
+              // style={{ zIndex: images.length - index }}
+            >
+              <Image
+                src={image}
+                width={100}
+                height={100}
+                alt={`Image ${index}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
 
-      {images.length > 3 && (
-        <div className="w-8 h-8 bg-gray-200 text-sm rounded-full flex items-center justify-center z-10 -ml-3">
-          +{images.length - 3}
+          {images.length > 3 && (
+            <div className="w-8 h-8 bg-gray-200 text-sm rounded-full flex items-center justify-center z-10 -ml-3">
+              +{images.length - 3}
+            </div>
+          )}
         </div>
-      )}
-    </div>
       </div>
     </div>
   );
