@@ -1,16 +1,7 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef } from "react";
-import {
-  FiMail,
-  FiPlus,
-  FiDownloadCloud,
-  FiArrowDown,
-  FiCheck,
-} from "react-icons/fi";
-import mastercard from "../images/mastercard.png";
-import visa from "../images/visa.png";
+import { useState } from "react";
+import { FiDownloadCloud, FiArrowDown, FiCheck } from "react-icons/fi";
 import DashboardNav from "./DashboardNav";
 import EmailForm from "./EmailForm";
 import PaymentForm from "./PaymentForm";
@@ -24,7 +15,6 @@ const images = [
 ];
 
 const Main = () => {
- 
   const [activePayment, setActivePayment] = useState("");
 
   return (
@@ -72,9 +62,8 @@ const Main = () => {
           <p className="text-gray-500">Select default payment method.</p>
         </div>
 
-        <div className="flex-auto">
-          <PaymentForm />
-        </div>
+        {/* Payment Cards Form  */}
+        <PaymentForm />
       </div>
 
       {/* Table section  */}

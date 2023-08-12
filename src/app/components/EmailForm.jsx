@@ -1,4 +1,6 @@
-import React, { useRef, useState } from "react";
+"use client";
+
+import { useRef, useState } from "react";
 import { FiMail } from "react-icons/fi";
 
 const userEmail = "olivia@untiltledui.com";
