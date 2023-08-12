@@ -2,9 +2,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef } from "react";
-import { FiMail, FiPlus, FiDownloadCloud, FiArrowDown, FiCheck } from "react-icons/fi";
+import {
+  FiMail,
+  FiPlus,
+  FiDownloadCloud,
+  FiArrowDown,
+  FiCheck,
+} from "react-icons/fi";
 import mastercard from "../images/mastercard.png";
 import visa from "../images/visa.png";
+import DashboardNav from "./DashboardNav";
+
+const images = [
+  "/images/man-1.jpg",
+  "/images/man-2.jpg",
+  "/images/man-3.jpg",
+  "/images/man-4.jpg",
+  "/images/man-5.jpg",
+];
 
 const Main = () => {
   const [active, setActive] = useState("");
@@ -58,6 +73,8 @@ const Main = () => {
 
   return (
     <div className="px-8 py-5 bg-gray-50 flex-auto overflow-y-auto">
+
+      {/* Header section  */}
       <header>
         <h2 className="font-medium text-3xl">Settings</h2>
         <p className="text-gray-500 py-2">
@@ -66,22 +83,7 @@ const Main = () => {
       </header>
 
       {/* Nav section */}
-
-      <div className="mt-5 flex">
-        <ul className="list-none flex border border-gray-300 rounded-lg">
-          {dashboardLinks.map((link) => (
-            <li
-              key={link.id}
-              className={`${
-                active === link.title ? "bg-gray-50" : "bg-white"
-              } font-medium hover:bg-gray-100 hover:font-semibold cursor-pointer border border-gray-200 p-3 text-center`}
-              onClick={() => setActive(link.title)}
-            >
-              <Link href={`#${link.id}`}>{link.title} </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <DashboardNav />
 
       <div className="mt-5">
         <div className="py-4">
@@ -326,9 +328,7 @@ const Main = () => {
                 <div className="table-cell w-1/7 text-gray-500 border-b py-6 bg-white text-sm">
                   <div className="flex gap-x-1 rounded-full py-1 px-2 bg-green-300 w-4/5 text-green-700">
                     <FiCheck />
-                    <span className="text-xs" >
-                      Paid
-                    </span>
+                    <span className="text-xs">Paid</span>
                   </div>
                 </div>
                 <div className="table-cell w-1/7 text-gray-500 border-b py-6 bg-white text-sm">
@@ -344,8 +344,26 @@ const Main = () => {
       </div>
 
       <div className="">
-        <h2>Card details</h2>
-        <p>Select default payment method.</p>
+        {/* <Image src={images[0]} alt="images" width={100} height={100} /> */}
+        <div className="flex items-center">
+      {images.slice(0, 3).map((image, index) => (
+        <div
+          key={index}
+          className={`relative w-8 h-8 rounded-full overflow-hidden border-2 border-white ${
+            index === 0 ? '' : '-ml-3'
+          }`}
+          // style={{ zIndex: images.length - index }}
+        >
+          <Image src={image} width={100} height={100} alt={`Image ${index}`} className="w-full h-full object-cover" />
+        </div>
+      ))}
+
+      {images.length > 3 && (
+        <div className="w-8 h-8 bg-gray-200 text-sm rounded-full flex items-center justify-center z-10 -ml-3">
+          +{images.length - 3}
+        </div>
+      )}
+    </div>
       </div>
     </div>
   );
