@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef } from "react";
-import { FiMail, FiPlus, FiDownloadCloud } from "react-icons/fi";
+import { FiMail, FiPlus, FiDownloadCloud, FiArrowDown, FiCheck } from "react-icons/fi";
 import mastercard from "../images/mastercard.png";
 import visa from "../images/visa.png";
 
@@ -198,11 +198,17 @@ const Main = () => {
                 <div className="">
                   <p>
                     <span className="font-bold">Visa ending in 2345</span>
-                    <span className="block font-medium text-gray-400">Expiry 06/24</span>
+                    <span className="block font-medium text-gray-400">
+                      Expiry 06/24
+                    </span>
                   </p>
                   <div className="mt-2 flex gap-x-5">
-                    <button className="font-medium text-gray-400">Set as default</button>
-                    <button className="text-purple-500 font-semibold">Edit</button>
+                    <button className="font-medium text-gray-400">
+                      Set as default
+                    </button>
+                    <button className="text-purple-500 font-semibold">
+                      Edit
+                    </button>
                   </div>
                 </div>
               </label>
@@ -237,26 +243,32 @@ const Main = () => {
                 <div className="">
                   <p>
                     <span className="font-bold">Mastercard ending in 2345</span>
-                    <span className="block font-medium text-gray-400">Expiry 06/24</span>
+                    <span className="block font-medium text-gray-400">
+                      Expiry 06/24
+                    </span>
                   </p>
                   <div className="mt-2 flex gap-x-5">
-                    <button className="font-medium text-gray-400">Set as default</button>
-                    <button className="text-purple-500 font-semibold">Edit</button>
+                    <button className="font-medium text-gray-400">
+                      Set as default
+                    </button>
+                    <button className="text-purple-500 font-semibold">
+                      Edit
+                    </button>
                   </div>
                 </div>
               </label>
             </div>
 
             <div>
-              <button className="flex items-center gap-x-2 bg-white text-gray-400 font-semibold">
-                <FiPlus className="text-2xl" />  
+              <button className="flex items-center gap-x-2 text-gray-400 font-semibold">
+                <FiPlus className="text-2xl" />
                 <span> Add new payment method</span>
               </button>
             </div>
           </form>
         </div>
       </div>
-       
+
       {/* Table section  */}
 
       <div className="mt-3">
@@ -264,12 +276,70 @@ const Main = () => {
           <h3 className="text-xl font-semibold">Billing history</h3>
 
           <button className="flex font-semibold bg-white gap-x-2 p-3 border-solid border-2 shadow-sm rounded-lg">
-          <FiDownloadCloud className="text-2xl" /> 
+            <FiDownloadCloud className="text-2xl" />
             Download all
           </button>
         </div>
-        <div>
-          Table
+
+        {/* Table section  */}
+        <div className="overflow-x-auto">
+          <div className="table w-[800px] lg:w-full border-solid border rounded-lg">
+            <div className="table-row-group">
+              <div className="table-row px-3">
+                <div className="table-cell w-3/9 border-b pl-8 py-2 text-xs text-gray-500">
+                  <div className="flex gap-x-2 items-end">
+                    <input type="checkbox" className="w-5 h-5" />
+                    <span>Invoice</span>
+                    <FiArrowDown className="w-4 h-4" />
+                  </div>
+                </div>
+                <div className="table-cell w-1/9 border-b py-2 text-xs text-gray-500">
+                  <span>Amount</span>
+                </div>
+                <div className="table-cell w-1/9 border-b py-2 text-xs text-gray-500">
+                  <span>Date</span>
+                </div>
+                <div className="table-cell w-1/9 border-b py-2 text-xs text-gray-500">
+                  <span>Status</span>
+                </div>
+                <div className="table-cell w-2/9 border-b py-2 text-xs text-gray-500">
+                  <span>Users on Plan</span>
+                </div>
+                <div className="table-cell w-1/9 border-b py-2 text-xs text-gray-500"></div>
+              </div>
+            </div>
+
+            <div className="table-row-group text-sm">
+              <div className="table-row">
+                <div className="table-cell w-2/7 border-b pl-8 py-6 bg-white text-sm font-semibold">
+                  <div className="flex gap-x-2 items-end">
+                    <input type="checkbox" className="w-5 h-5" />
+                    <span>Basic Plan - Dec 2022</span>
+                  </div>
+                </div>
+                <div className="table-cell w-1/7 text-gray-500 border-b py-6 bg-white text-sm">
+                  <span>USD $1.00</span>
+                </div>
+                <div className="table-cell w-1/7 text-gray-500 border-b py-6 bg-white text-sm">
+                  <span>Dec 1, 2022</span>
+                </div>
+                <div className="table-cell w-1/7 text-gray-500 border-b py-6 bg-white text-sm">
+                  <div className="flex gap-x-1 rounded-full py-1 px-2 bg-green-300 w-4/5 text-green-700">
+                    <FiCheck />
+                    <span className="text-xs" >
+                      Paid
+                    </span>
+                  </div>
+                </div>
+                <div className="table-cell w-1/7 text-gray-500 border-b py-6 bg-white text-sm">
+                  <span>Users on Plan</span>
+                </div>
+                <div className="table-cell w-1/7 bg-white border-b py-2 text-sm pr-1">
+                  <FiDownloadCloud className="text-2xl text-gray-500" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
