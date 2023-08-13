@@ -1,53 +1,17 @@
 "use client";
-
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { dashboardNavLiStyle, dashboardNavUlStyle } from "../styles";
-
-const dashboardLinks = [
-  {
-    id: "my-details",
-    title: "My details",
-  },
-  {
-    id: "profile",
-    title: "Profile",
-  },
-  {
-    id: "password",
-    title: "Password",
-  },
-  {
-    id: "team",
-    title: "Team",
-  },
-  {
-    id: "plan",
-    title: "Plan",
-  },
-  {
-    id: "billing",
-    title: "Billing",
-  },
-  {
-    id: "notifications",
-    title: "Notifications",
-  },
-  {
-    id: "integration",
-    title: "Integration",
-  },
-  {
-    id: "api",
-    title: "Api",
-  },
-];
+import useScroll from "./useScroll";
+import { dashboardLinks } from "../data";
 
 const DashboardNav = () => {
   const [active, setActive] = useState("");
+  const docRef = useRef(null);
+  useScroll(docRef);
 
   return (
-    <div className="mt-5 overflow-x-auto">
+    <div className="mt-5 overflow-x-auto" ref={docRef}>
       <div className="flex w-[800px]">
         <ul className={dashboardNavUlStyle}>
           {dashboardLinks.map((link, index) => (
