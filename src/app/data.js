@@ -1,3 +1,14 @@
+import {
+    FiBarChart2,
+    FiLayers,
+    FiCheckSquare,
+    FiFlag,
+    FiUsers,
+    FiSettings,
+  } from "react-icons/fi";
+  import { FaHome } from "react-icons/fa";
+import { iconStyle } from "./styles";
+
 const tableData = [
   {
     id: 1,
@@ -115,4 +126,37 @@ const tableData = [
   },
 ];
 
-export { tableData };
+const navLinks = [
+    {
+      title: "Home",
+      icon: <FaHome className={iconStyle} />,
+      badge: null,
+    },
+    {
+      title: "Dashboard",
+      icon: <FiBarChart2 className={iconStyle} />,
+      badge: 10,
+    },
+    {
+      title: "Projects",
+      icon: <FiLayers className={iconStyle} />,
+      badge: null,
+    },
+    {
+      title: "Tasks",
+      icon: <FiCheckSquare className={iconStyle} />,
+      badge: null,
+    },
+    {
+      title: "Reporting",
+      icon: <FiFlag className={iconStyle} />,
+      badge: null,
+    },
+    {
+      title: "Users",
+      icon: <FiUsers className={iconStyle} />,
+      badge: null,
+    },
+  ];
+
+export { tableData, navLinks };
