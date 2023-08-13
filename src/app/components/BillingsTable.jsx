@@ -12,8 +12,8 @@ import { tableData } from "../data";
 import useScroll from "./useScroll";
 
 const BillingsTable = () => {
+  
   const docRef = useRef(null);
-
   useScroll(docRef);
 
   return (

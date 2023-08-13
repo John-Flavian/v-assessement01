@@ -1,12 +1,12 @@
 import {
-    FiBarChart2,
-    FiLayers,
-    FiCheckSquare,
-    FiFlag,
-    FiUsers,
-    FiSettings,
-  } from "react-icons/fi";
-  import { FaHome } from "react-icons/fa";
+  FiBarChart2,
+  FiLayers,
+  FiCheckSquare,
+  FiFlag,
+  FiUsers,
+  FiSettings,
+} from "react-icons/fi";
+import { FaHome } from "react-icons/fa";
 import { iconStyle } from "./styles";
 
 const tableData = [
@@ -127,36 +127,75 @@ const tableData = [
 ];
 
 const navLinks = [
-    {
-      title: "Home",
-      icon: <FaHome className={iconStyle} />,
-      badge: null,
-    },
-    {
-      title: "Dashboard",
-      icon: <FiBarChart2 className={iconStyle} />,
-      badge: 10,
-    },
-    {
-      title: "Projects",
-      icon: <FiLayers className={iconStyle} />,
-      badge: null,
-    },
-    {
-      title: "Tasks",
-      icon: <FiCheckSquare className={iconStyle} />,
-      badge: null,
-    },
-    {
-      title: "Reporting",
-      icon: <FiFlag className={iconStyle} />,
-      badge: null,
-    },
-    {
-      title: "Users",
-      icon: <FiUsers className={iconStyle} />,
-      badge: null,
-    },
-  ];
+  {
+    title: "Home",
+    icon: <FaHome className={iconStyle} />,
+    badge: null,
+  },
+  {
+    title: "Dashboard",
+    icon: <FiBarChart2 className={iconStyle} />,
+    badge: 10,
+  },
+  {
+    title: "Projects",
+    icon: <FiLayers className={iconStyle} />,
+    badge: null,
+  },
+  {
+    title: "Tasks",
+    icon: <FiCheckSquare className={iconStyle} />,
+    badge: null,
+  },
+  {
+    title: "Reporting",
+    icon: <FiFlag className={iconStyle} />,
+    badge: null,
+  },
+  {
+    title: "Users",
+    icon: <FiUsers className={iconStyle} />,
+    badge: null,
+  },
+];
 
-export { tableData, navLinks };
+const dashboardLinks = [
+  {
+    id: "my-details",
+    title: "My details",
+  },
+  {
+    id: "profile",
+    title: "Profile",
+  },
+  {
+    id: "password",
+    title: "Password",
+  },
+  {
+    id: "team",
+    title: "Team",
+  },
+  {
+    id: "plan",
+    title: "Plan",
+  },
+  {
+    id: "billing",
+    title: "Billing",
+  },
+  {
+    id: "notifications",
+    title: "Notifications",
+  },
+  {
+    id: "integration",
+    title: "Integration",
+  },
+  {
+    id: "api",
+    title: "Api",
+  },
+];
+
+export { tableData, navLinks, dashboardLinks };
