@@ -1,19 +1,15 @@
-"use client"
+"use client";
 import { FiDownloadCloud } from "react-icons/fi";
 import DashboardNav from "./DashboardNav";
 import EmailForm from "./EmailForm";
 import PaymentForm from "./PaymentForm";
 import BillingsTable from "./BillingsTable";
 
-
-
 const Main = () => {
-
-  
   return (
     <div className="px-8 py-5 bg-gray-50 flex-auto overflow-y-auto">
       {/* Header section  */}
-      <header>
+      <header className="mt-16 md:mt-0">
         <h2 className="font-medium text-3xl">Settings</h2>
         <p className="text-gray-500 py-2">
           Manage your team and preferences here.
@@ -60,7 +56,6 @@ const Main = () => {
         <PaymentForm />
       </div>
 
-
       {/* Table section  */}
       <div className="mt-3">
         <div className="flex justify-between items-start py-5 text-gray-600">
@@ -71,10 +66,9 @@ const Main = () => {
             Download all
           </button>
         </div>
-        
+
         {/* Table  */}
         <BillingsTable />
-        
       </div>
     </div>
   );
