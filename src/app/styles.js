@@ -4,12 +4,11 @@ const dashboardNavLiStyle =
 const paymentDivStyle =
   "relative flex items-start py-5 px-2 w-full border-solid border-2 shadow-md rounded-lg";
 
+const headerCell1 = "table-cell w-1/8 border-b py-2 text-xs text-gray-500";
+const headerCell2 = "table-cell w-2/8 border-b py-2 text-xs text-gray-500";
 
-const headerCell1 = "table-cell w-1/8 border-b py-2 text-xs text-gray-500"
-const headerCell2 = "table-cell w-2/8 border-b py-2 text-xs text-gray-500"
-
-const contentCell1 = "table-cell w-1/8 border-b py-6 text-sm text-gray-500"
-const contentCell2 = "table-cell w-2/8 border-b py-6 text-sm"
+const contentCell1 = "table-cell w-1/8 border-b py-6 text-sm text-gray-500";
+const contentCell2 = "table-cell w-2/8 border-b py-6 text-sm";
 
 export {
   dashboardNavLiStyle,
@@ -18,5 +17,5 @@ export {
   headerCell1,
   headerCell2,
   contentCell1,
-  contentCell2
+  contentCell2,
 };

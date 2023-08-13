@@ -60,6 +60,7 @@ const NavBar = () => {
         <h1 className="text-[20px] ">Untitled UI</h1>
       </header>
 
+      {/* Search Input Section  */}
       <div className="relative">
         <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
 
@@ -68,6 +69,7 @@ const NavBar = () => {
           placeholder=" Search"
         />
       </div>
+
       {/* NavLinks Section  */}
       <div className="mt-4">
         <ul className="list-none md:flex flex-col gap-1">
@@ -82,6 +84,7 @@ const NavBar = () => {
           })}
         </ul>
       </div>
+
       {/* Support and features section */}
       <div className="mt-5">
         <ul className="list-none md:flex flex-col gap-1">
