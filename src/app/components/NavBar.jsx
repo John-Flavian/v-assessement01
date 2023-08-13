@@ -55,7 +55,7 @@ const NavBar = () => {
         </ul>
 
         {/* Features */}
-        <div className="mt-5 py-6 bg-gray-100 rounded-lg flex-col items-center justify-center px-4">
+        <div className="mt-5 py-6 bg-gray-50 rounded-lg flex-col items-center justify-center px-4">
           <div className="my-1">
             <h4 className="font-bold">New features available!</h4>
             <p className="text-gray-700 my-2 text-[15px]">

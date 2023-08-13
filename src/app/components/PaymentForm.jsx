@@ -2,26 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FiPlus } from "react-icons/fi";
-import mastercard from "../images/mastercard.png";
-import visa from "../images/visa.png";
+import { paymentCards } from "../data";
 import { paymentDivStyle } from "../styles";
-
-const paymentCards = [
-  {
-    id: 1,
-    type: "visa",
-    cardNo: "4352",
-    logo: visa,
-    expiry: "06/24",
-  },
-  {
-    id: 2,
-    type: "mastercard",
-    cardNo: "1652",
-    logo: mastercard,
-    expiry: "07/25",
-  },
-];
 
 const PaymentForm = () => {
   const [activePayment, setActivePayment] = useState("");
@@ -62,7 +44,7 @@ const PaymentForm = () => {
                 <div>
                   <p>
                     <span className="font-bold">
-                      {card.type} ending in {card.expiry}
+                      {card.type} ending in {card.cardNo}
                     </span>
                     <span className="block font-medium text-gray-400">
                       Expiry {card.expiry}

@@ -4,10 +4,11 @@ import {
   FiCheckSquare,
   FiFlag,
   FiUsers,
-  FiSettings,
 } from "react-icons/fi";
 import { FaHome } from "react-icons/fa";
 import { iconStyle } from "./styles";
+import mastercard from "./images/mastercard.png";
+import visa from "./images/visa.png";
 
 const tableData = [
   {
@@ -198,4 +199,21 @@ const dashboardLinks = [
   },
 ];
 
-export { tableData, navLinks, dashboardLinks };
+const paymentCards = [
+  {
+    id: 1,
+    type: "Visa",
+    cardNo: "4352",
+    logo: visa,
+    expiry: "06/24",
+  },
+  {
+    id: 2,
+    type: "Mastercard",
+    cardNo: "1652",
+    logo: mastercard,
+    expiry: "07/25",
+  },
+];
+
+export { tableData, navLinks, dashboardLinks, paymentCards };
