@@ -31,7 +31,7 @@ const Main = () => {
         {/* Divider */}
         <div className="w-full border-t my-5" />
 
-        <div className="flex gap-28 py-4">
+        <div className="flex flex-col gap-y-8 py-4 md:gap-24 md:flex-row">
           <div>
             <h2 className="font-medium text-gray-700">Contact email</h2>
             <p className="text-gray-500">Where should invoices be sent?</p>
@@ -46,7 +46,7 @@ const Main = () => {
       <div className="w-full border-t my-5" />
 
       {/* Card Section  */}
-      <div className="flex gap-28 py-4">
+      <div className="flex flex-col gap-y-8 py-4 md:gap-24 md:flex-row">
         <div>
           <h2 className="font-medium text-gray-700">Card details</h2>
           <p className="text-gray-500">Select default payment method.</p>
