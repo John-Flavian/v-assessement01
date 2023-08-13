@@ -5,6 +5,7 @@ import { FiDownloadCloud, FiArrowDown, FiCheck } from "react-icons/fi";
 import DashboardNav from "./DashboardNav";
 import EmailForm from "./EmailForm";
 import PaymentForm from "./PaymentForm";
+import BillingsTable from "./BillingsTable";
 
 const images = [
   "/images/man-1.jpg",
@@ -66,8 +67,8 @@ const Main = () => {
         <PaymentForm />
       </div>
 
-      {/* Table section  */}
 
+      {/* Table section  */}
       <div className="mt-3">
         <div className="flex justify-between items-start py-5 text-gray-600">
           <h3 className="text-xl font-semibold">Billing history</h3>
@@ -78,8 +79,10 @@ const Main = () => {
           </button>
         </div>
 
+        <BillingsTable />
+
         {/* Table section  */}
-        <div className="overflow-x-auto">
+        {/* <div className="overflow-x-auto">
           <div className="table w-[800px] lg:w-full border-solid border rounded-lg">
             <div className="table-row-group">
               <div className="table-row px-3">
@@ -135,7 +138,7 @@ const Main = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="">
@@ -147,7 +150,7 @@ const Main = () => {
               className={`relative w-8 h-8 rounded-full overflow-hidden border-2 border-white ${
                 index === 0 ? "" : "-ml-3"
               }`}
-              // style={{ zIndex: images.length - index }}
+              style={{ zIndex: index + 1 }}
             >
               <Image
                 src={image}
@@ -160,7 +163,7 @@ const Main = () => {
           ))}
 
           {images.length > 3 && (
-            <div className="w-8 h-8 bg-gray-200 text-sm rounded-full flex items-center justify-center z-10 -ml-3">
+            <div className="w-8 h-8 bg-gray-200 text-sm text-gray-600 rounded-full flex items-center justify-center z-10 -ml-3">
               +{images.length - 3}
             </div>
           )}
