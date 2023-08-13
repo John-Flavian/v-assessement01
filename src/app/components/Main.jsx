@@ -31,7 +31,7 @@ const Main = () => {
         {/* Divider */}
         <div className="w-full border-t my-5" />
 
-        <div className="flex flex-col gap-y-8 py-4 md:gap-24 md:flex-row">
+        <div className="flex flex-col gap-y-8 py-2 md:gap-24 md:py-4 md:flex-row">
           <div>
             <h2 className="font-medium text-gray-700">Contact email</h2>
             <p className="text-gray-500">Where should invoices be sent?</p>
@@ -58,7 +58,7 @@ const Main = () => {
 
       {/* Table section  */}
       <div className="mt-3">
-        <div className="flex justify-between items-start py-5 text-gray-600">
+        <div className="flex flex-col gap-y-4 md:flex-row justify-between items-start py-5 text-gray-600">
           <h3 className="text-xl font-semibold">Billing history</h3>
 
           <button className="flex font-semibold bg-white gap-x-2 p-3 border-solid border-2 shadow-sm rounded-lg">
