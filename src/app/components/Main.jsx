@@ -9,6 +9,7 @@ import BillingsTable from "./BillingsTable";
 
 const Main = () => {
 
+  
   return (
     <div className="px-8 py-5 bg-gray-50 flex-auto overflow-y-auto">
       {/* Header section  */}

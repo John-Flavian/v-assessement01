@@ -1,3 +1,5 @@
+"use client";
+import { useRef } from "react";
 import { FiDownloadCloud, FiArrowDown, FiCheck } from "react-icons/fi";
 import {
   contentCell1,
@@ -7,10 +9,15 @@ import {
 } from "../styles";
 import ImageStack from "./ImageStack";
 import { tableData } from "../data";
+import useScroll from "./useScroll";
 
 const BillingsTable = () => {
+  const docRef = useRef(null);
+
+  useScroll(docRef);
+
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto" ref={docRef}>
       <div className="table w-[800px] lg:w-full border-solid border rounded-lg">
         <div className="table-row-group">
           <div className="table-row px-3">

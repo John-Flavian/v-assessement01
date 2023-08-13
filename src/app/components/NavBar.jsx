@@ -10,7 +10,6 @@ import { iconStyle, navLiStyle, badgeStyle } from "../styles";
 const NavBar = () => {
   return (
     <nav className="px-[20px] w-[300px] mb-4 border-solid border-2 overflow-y-auto">
-      
       {/* Header Section */}
       <header className="flex mt-5 mb-5">
         <Image src={logo} alt="logo" width={32} height={32} />
@@ -42,7 +41,7 @@ const NavBar = () => {
         </ul>
       </div>
 
-      {/* Support and features section */}
+      {/* Support / features / User Account section */}
       <div className="mt-5">
         <ul className="list-none md:flex flex-col gap-1">
           <li className={navLiStyle}>
