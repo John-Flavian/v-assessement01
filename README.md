@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-To fun the app locally navigate to the root folder and run the development server:
+To run the app locally navigate to the root folder and run the development server:
 
 ```bash
 npm install
