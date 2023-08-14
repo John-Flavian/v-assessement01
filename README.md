@@ -5,10 +5,13 @@
 To fun the app locally navigate to the root folder and run the development server:
 
 ```bash
+npm install
 npm run dev
 # or
+yarn install
 yarn dev
 # or
+pnpm install
 pnpm dev
 ```
 
@@ -22,4 +25,4 @@ It was built using the popular [Next.js Framework](https://nextjs.org/)
 
 ## Deployment
 
-It has been deployed on Vercel and you can view it [here](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+It has been deployed on Vercel and you can view it [here](https://vencru-assessement01.vercel.app/).
